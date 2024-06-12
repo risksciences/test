@@ -4,4 +4,9 @@ WORKDIR /box
 COPY . /box
 
 RUN mkdir /box/workspace
-RUN mkdir /box/workspace3
+
+RUN conda env create \
+    --yes \
+    --no-default-packages \
+    --prefix /box/prefix \
+    --file ./env.yml
