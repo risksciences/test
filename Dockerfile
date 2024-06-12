@@ -6,6 +6,8 @@ COPY . /box
 RUN mkdir /box/workspace
 RUN mkdir /box/workspace3
 
+RUN ls /box
+
 RUN conda env create \
     --yes \
     --no-default-packages \
