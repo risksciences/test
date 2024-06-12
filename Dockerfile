@@ -1,6 +1,7 @@
 FROM continuumio/miniconda3
 
 WORKDIR /box
+COPY . /box
 
 RUN mkdir /box/workspace
 RUN mkdir /box/workspace3
@@ -9,7 +10,7 @@ RUN conda env create \
     --yes \
     --no-default-packages \
     --prefix /box/prefix \
-    --file https://raw.githubusercontent.com/risksciences/test/main/env.yml
+    --file ./env.yml
 
 RUN conda run \
     --live-stream \
